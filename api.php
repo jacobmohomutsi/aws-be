@@ -32,6 +32,17 @@ if ($conn->connect_error) {
 // TEST CONNECTION
 // echo json_encode(["status" => "Connected"]); exit;
 
+$conn->query("CREATE DATABASE IF NOT EXISTS mysql");
+$conn->select_db("mysql");
+
+$conn->query("
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(100)
+)
+");
+
 // GET all users
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
