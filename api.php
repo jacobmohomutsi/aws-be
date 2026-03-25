@@ -32,8 +32,8 @@ if ($conn->connect_error) {
 // TEST CONNECTION
 // echo json_encode(["status" => "Connected"]); exit;
 
-$conn->query("CREATE DATABASE IF NOT EXISTS mysql");
-$conn->select_db("mysql");
+$conn->query("CREATE DATABASE IF NOT EXISTS test_db");
+$conn->select_db("test_db");
 
 $conn->query("
 CREATE TABLE IF NOT EXISTS users (
